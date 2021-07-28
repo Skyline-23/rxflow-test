@@ -97,12 +97,9 @@
 		6218085826B13F120011A290 /* rxflow-test */ = {
 			isa = PBXGroup;
 			children = (
-				6218085926B13F120011A290 /* AppDelegate.swift */,
-				6218085B26B13F120011A290 /* SceneDelegate.swift */,
-				6218085D26B13F120011A290 /* ViewController.swift */,
-				6218086226B13F150011A290 /* Assets.xcassets */,
-				6218086426B13F150011A290 /* LaunchScreen.storyboard */,
-				6218086726B13F150011A290 /* Info.plist */,
+				6218088926B1404C0011A290 /* Source */,
+				6218088A26B140540011A290 /* Resource */,
+				6218088B26B1405B0011A290 /* SupportingFiles */,
 			);
 			path = "rxflow-test";
 			sourceTree = "<group>";
@@ -123,6 +120,73 @@
 				6218087D26B13F150011A290 /* Info.plist */,
 			);
 			path = "rxflow-testUITests";
+			sourceTree = "<group>";
+		};
+		6218088926B1404C0011A290 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6218085926B13F120011A290 /* AppDelegate.swift */,
+				6218085B26B13F120011A290 /* SceneDelegate.swift */,
+				6218088E26B140B40011A290 /* Model */,
+				6218088D26B140970011A290 /* ViewController */,
+				6218088C26B1408D0011A290 /* View */,
+				6218088F26B140C30011A290 /* Base */,
+				6218089026B140EA0011A290 /* Utils */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		6218088A26B140540011A290 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6218086226B13F150011A290 /* Assets.xcassets */,
+				6218086426B13F150011A290 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		6218088B26B1405B0011A290 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6218086726B13F150011A290 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		6218088C26B1408D0011A290 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6218088D26B140970011A290 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6218085D26B13F120011A290 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6218088E26B140B40011A290 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6218088F26B140C30011A290 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		6218089026B140EA0011A290 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
