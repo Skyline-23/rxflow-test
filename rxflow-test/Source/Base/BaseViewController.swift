@@ -9,8 +9,6 @@ import UIKit
 
 import RxSwift
 import RxCocoa
-import Then
-import SnapKit
 
 class BaseViewController: UIViewController {
     
