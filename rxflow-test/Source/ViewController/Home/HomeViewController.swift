@@ -1,25 +1,23 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  rxflow-test
 //
-//  Created by 김부성 on 2021/07/28.
+//  Created by 김부성 on 2021/07/29.
 //
 
 import UIKit
 import ReactorKit
 
-final class LoginViewController: BaseViewController, View {
+final class HomeViewController: BaseViewController, View {
     
-    typealias Reactor = LoginViewReactor
+    typealias Reactor = HomeViewReactor
     
-    // MARK: - UI
     let loginButton = UIButton().then {
         $0.layer.cornerRadius = 8
-        $0.setTitle("로그인", for: .normal)
+        $0.setTitle("로그아웃", for: .normal)
         $0.backgroundColor = .blue
     }
     
-    // MARK: - Initializing
     init(reactor: Reactor) {
         super.init()
         defer { self.reactor = reactor }
@@ -29,11 +27,10 @@ final class LoginViewController: BaseViewController, View {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Login"
+        self.title = "Home"
         // Do any additional setup after loading the view.
     }
     
@@ -44,9 +41,9 @@ final class LoginViewController: BaseViewController, View {
         }
     }
     
-    func bind(reactor: LoginViewReactor) {
+    func bind(reactor: HomeViewReactor) {
         loginButton.rx.tap
-            .map { Reactor.Action.login }
+            .map { Reactor.Action.logout }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }
