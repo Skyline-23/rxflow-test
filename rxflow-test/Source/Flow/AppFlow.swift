@@ -23,21 +23,37 @@ class AppFlow: Flow {
         guard let step = step as? DemoStep else { return .none }
         
         switch step {
+        
         case .loginIsRequired:
             return self.navigateToLogin()
             
-        case .userIsLoggedIn:
+        case .homeIsRequired:
             return self.navigateToHome()
+            
+        default:
+            return .none
         }
     }
 }
 
 extension AppFlow {
-    fileprivate func navigateToLogin() -> FlowContributors {
+    private func navigateToLogin() -> FlowContributors {
+        let loginFlow = LoginFlow()
         
+        Flows.use(loginFlow, when: .created) { root in
+            self.window.rootViewController = root
+        }
+        
+        return .one(flowContributor: .contribute(withNextPresentable: loginFlow, withNextStepper: OneStepper(withSingleStep: DemoStep.loginIsRequired)))
     }
     
-    fileprivate func navigateToHome() -> FlowContributors {
+    private func navigateToHome() -> FlowContributors {
+        let homeFlow = HomeFlow()
         
+        Flows.use(homeFlow, when: .created) { root in
+            self.window.rootViewController = root
+        }
+        
+        return .one(flowContributor: .contribute(withNextPresentable: homeFlow, withNextStepper: OneStepper(withSingleStep: DemoStep.homeIsRequired)))
     }
 }

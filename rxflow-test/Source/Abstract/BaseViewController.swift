@@ -28,6 +28,7 @@ class BaseViewController: UIViewController {
     }
     
     deinit {
+        print("❎ \(type(of: self)): \(#function)")
         self.activityIndicatorView.stopAnimating()
     }
     

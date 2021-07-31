@@ -6,19 +6,23 @@
 //
 
 import UIKit
+import RxFlow
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var coordinator = FlowCoordinator()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
         
-        window = UIWindow(windowScene: windowScene)
-        let reactor = LoginViewReactor()
-        window?.rootViewController = LoginViewController(reactor: reactor)
-        window?.makeKeyAndVisible()
+        let appFlow = AppFlow(window: window)
+        let appStepper = OneStepper(withSingleStep: DemoStep.loginIsRequired)
+        self.coordinator.coordinate(flow: appFlow, with: appStepper)
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

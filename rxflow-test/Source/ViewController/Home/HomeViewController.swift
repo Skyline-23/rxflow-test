@@ -15,7 +15,7 @@ final class HomeViewController: BaseViewController, View {
     let loginButton = UIButton().then {
         $0.layer.cornerRadius = 8
         $0.setTitle("로그아웃", for: .normal)
-        $0.backgroundColor = .blue
+        $0.backgroundColor = .red
     }
     
     init(reactor: Reactor) {
@@ -32,6 +32,10 @@ final class HomeViewController: BaseViewController, View {
         
         self.title = "Home"
         // Do any additional setup after loading the view.
+    }
+    
+    override func setupLayout() {
+        self.view.addSubview(loginButton)
     }
     
     override func makeConstraints() {

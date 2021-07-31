@@ -35,7 +35,7 @@ final class LoginViewReactor: Reactor, Stepper {
         
         switch action {
         case .login:
-            self.steps.accept(DemoStep.userIsLoggedIn)
+            self.steps.accept(DemoStep.homeIsRequired)
             return .empty()
         }
     }

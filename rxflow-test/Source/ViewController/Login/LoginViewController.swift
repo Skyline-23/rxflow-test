@@ -37,6 +37,10 @@ final class LoginViewController: BaseViewController, View {
         // Do any additional setup after loading the view.
     }
     
+    override func setupLayout() {
+        self.view.addSubview(loginButton)
+    }
+    
     override func makeConstraints() {
         self.loginButton.snp.makeConstraints {
             $0.leading.trailing.bottom.equalToSuperview().inset(20)

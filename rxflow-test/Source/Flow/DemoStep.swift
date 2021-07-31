@@ -8,7 +8,11 @@
 import RxFlow
 
 enum DemoStep: Step {
-    // Login
+    
+    case dismiss
+    case popViewController
+    
+    //MARK: - Login
     case loginIsRequired
-    case userIsLoggedIn
+    case homeIsRequired
 }
