@@ -12,7 +12,7 @@ target 'rxflow-test' do
   pod 'SnapKit'
   pod 'Then'
   pod 'ReactorKit'
-  
+  pod 'Moya/RxSwift'
 
   target 'rxflow-testTests' do
     inherit! :search_paths

@@ -7,9 +7,11 @@
 
 import UIKit
 import RxFlow
+import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
+    var disposeBag = DisposeBag()
     var window: UIWindow?
     var coordinator = FlowCoordinator()
 
@@ -18,6 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
+        
+        coordinator.rx.willNavigate.subscribe(onNext: { (flow, step) in
+            print("➡️ will navigate to flow=\(flow) and step=\(step)")
+        }).disposed(by: self.disposeBag)
+
+        // 작업 후에..
+        coordinator.rx.didNavigate.subscribe(onNext: { (flow, step) in
+            print("➡️ did navigate to flow=\(flow) and step=\(step)")
+        }).disposed(by: self.disposeBag)
+
         
         let appFlow = AppFlow(window: window)
         let appStepper = OneStepper(withSingleStep: DemoStep.loginIsRequired)

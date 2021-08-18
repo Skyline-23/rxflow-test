@@ -39,8 +39,9 @@ final class HomeViewController: BaseViewController, View {
     }
     
     override func makeConstraints() {
+        let safeArea = self.view.safeAreaLayoutGuide
         self.loginButton.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalToSuperview().inset(20)
+            $0.leading.trailing.bottom.equalTo(safeArea).inset(20)
             $0.height.equalTo(50)
         }
     }

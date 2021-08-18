@@ -16,7 +16,7 @@ final class LoginViewController: BaseViewController, View {
     let loginButton = UIButton().then {
         $0.layer.cornerRadius = 8
         $0.setTitle("로그인", for: .normal)
-        $0.backgroundColor = .blue
+        $0.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
     }
     
     // MARK: - Initializing
@@ -42,13 +42,17 @@ final class LoginViewController: BaseViewController, View {
     }
     
     override func makeConstraints() {
+        let safeArea = self.view.safeAreaLayoutGuide
         self.loginButton.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalToSuperview().inset(20)
+            $0.leading.trailing.bottom.equalTo(safeArea).inset(20)
             $0.height.equalTo(50)
         }
     }
     
+    // MARK: - Configuring
     func bind(reactor: LoginViewReactor) {
+        
+        // Input
         loginButton.rx.tap
             .map { Reactor.Action.login }
             .bind(to: reactor.action)

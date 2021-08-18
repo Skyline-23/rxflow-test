@@ -20,6 +20,7 @@
 		6218089626B151D40011A290 /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6218089526B151D40011A290 /* UIViewPreview.swift */; };
 		6218089826B151FF0011A290 /* UIViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6218089726B151FF0011A290 /* UIViewControllerPreview.swift */; };
 		6218089A26B152250011A290 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6218089926B152250011A290 /* Preview.swift */; };
+		6262C7BC26CD2C4D001D3E22 /* SampleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6262C7BB26CD2C4D001D3E22 /* SampleAPI.swift */; };
 		62FECC2326B292D400D1EADC /* DemoStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FECC2226B292D400D1EADC /* DemoStep.swift */; };
 		62FECC2526B2954700D1EADC /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FECC2426B2954700D1EADC /* AppFlow.swift */; };
 		62FECC2826B2DB9900D1EADC /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FECC2726B2DB9900D1EADC /* LoginViewReactor.swift */; };
@@ -70,6 +71,7 @@
 		6218089526B151D40011A290 /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
 		6218089726B151FF0011A290 /* UIViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPreview.swift; sourceTree = "<group>"; };
 		6218089926B152250011A290 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		6262C7BB26CD2C4D001D3E22 /* SampleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAPI.swift; sourceTree = "<group>"; };
 		62FECC2226B292D400D1EADC /* DemoStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoStep.swift; sourceTree = "<group>"; };
 		62FECC2426B2954700D1EADC /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		62FECC2726B2DB9900D1EADC /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		62FECC2C26B2EEE900D1EADC /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
 		62FECC2E26B43DE400D1EADC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		62FECC3026B52C9F00D1EADC /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
+		62FECC3326B6C8A400D1EADC /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		67B8BF8A08E41D01C152666C /* Pods-rxflow-test-rxflow-testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxflow-test-rxflow-testUITests.release.xcconfig"; path = "Target Support Files/Pods-rxflow-test-rxflow-testUITests/Pods-rxflow-test-rxflow-testUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A765D3103206E40C81B55B8E /* Pods-rxflow-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxflow-test.release.xcconfig"; path = "Target Support Files/Pods-rxflow-test/Pods-rxflow-test.release.xcconfig"; sourceTree = "<group>"; };
 		AA6B24944640BD9EA047C97E /* Pods_rxflow_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxflow_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,9 +186,10 @@
 				6218085926B13F120011A290 /* AppDelegate.swift */,
 				6218085B26B13F120011A290 /* SceneDelegate.swift */,
 				62FECC2126B2928300D1EADC /* Flow */,
-				6218088E26B140B40011A290 /* Model */,
 				6218088D26B140970011A290 /* ViewController */,
 				6218088C26B1408D0011A290 /* View */,
+				6218088E26B140B40011A290 /* Model */,
+				62FECC3226B6C65C00D1EADC /* Network */,
 				6218088F26B140C30011A290 /* Abstract */,
 				6218089026B140EA0011A290 /* Utils */,
 			);
@@ -250,6 +254,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		6262C7BA26CD2C27001D3E22 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6262C7BB26CD2C4D001D3E22 /* SampleAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		62FECC2126B2928300D1EADC /* Flow */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +289,15 @@
 				62FECC2C26B2EEE900D1EADC /* HomeViewReactor.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		62FECC3226B6C65C00D1EADC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				62FECC3326B6C8A400D1EADC /* Network.swift */,
+				6262C7BA26CD2C27001D3E22 /* API */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		86F3BE0CBC53CAE951957EFD /* Frameworks */ = {
@@ -532,6 +553,7 @@
 				62FECC2526B2954700D1EADC /* AppFlow.swift in Sources */,
 				62FECC2826B2DB9900D1EADC /* LoginViewReactor.swift in Sources */,
 				62FECC2F26B43DE400D1EADC /* LoginFlow.swift in Sources */,
+				6262C7BC26CD2C4D001D3E22 /* SampleAPI.swift in Sources */,
 				6218085A26B13F120011A290 /* AppDelegate.swift in Sources */,
 				62FECC3126B52C9F00D1EADC /* HomeFlow.swift in Sources */,
 				6218089826B151FF0011A290 /* UIViewControllerPreview.swift in Sources */,
